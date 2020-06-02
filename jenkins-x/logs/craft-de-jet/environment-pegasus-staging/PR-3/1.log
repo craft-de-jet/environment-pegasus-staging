@@ -1,0 +1,53 @@
+
+Showing logs for build [32mmeta-craft-de-jet-environment-p-9nsvd-1[0m stage [32mmeta-pipeline[0m and container [32mstep-credential-initializer-7mtj2[0m
+{"level":"info","ts":1591120238.5217884,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1591120238.5223196,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mmeta-craft-de-jet-environment-p-9nsvd-1[0m stage [32mmeta-pipeline[0m and container [32mstep-working-dir-initializer-8njsv[0m
+{"level":"info","ts":1591120239.584548,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1591120239.6339188,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mmeta-craft-de-jet-environment-p-9nsvd-1[0m stage [32mmeta-pipeline[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mmeta-craft-de-jet-environment-p-9nsvd-1[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-craft-de-jet-environment-p-9nsvd-pcr6k[0m
+{"level":"info","ts":1591120245.7492425,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1591120247.991926,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/************/environment-pegasus-staging.git @ 2c4392f363891f11cc6f18eda564735ee9095dea in path /workspace/source"}
+
+Showing logs for build [32mmeta-craft-de-jet-environment-p-9nsvd-1[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:2c4392f363891f11cc6f18eda564735ee9095dea,3:2207efd109f47fe21fcccbf79bc93a2841d7d477
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow 2207efd109f47fe21fcccbf79bc93a2841d7d477: 2c4392f363891f11cc6f18eda564735ee9095dea:
+DEBUG: ran git fetch --unshallow origin 2207efd109f47fe21fcccbf79bc93a2841d7d477: 2c4392f363891f11cc6f18eda564735ee9095dea: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard 2c4392f363891f11cc6f18eda564735ee9095dea
+DEBUG: ran git reset --hard 2c4392f363891f11cc6f18eda564735ee9095dea in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge 2207efd109f47fe21fcccbf79bc93a2841d7d477
+DEBUG: ran git merge 2207efd109f47fe21fcccbf79bc93a2841d7d477 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 2c4392f363891f11cc6f18eda564735ee9095dea..HEAD
+Merged SHA 2207efd109f47fe21fcccbf79bc93a2841d7d477 with commit message 'chore: Promote dashboard-ui to version 0.0.1' into base branch master
+
+Showing logs for build [32mmeta-craft-de-jet-environment-p-9nsvd-1[0m stage [32mmeta-pipeline[0m and container [32mstep-merge-pull-refs[0m
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git fetch origin --unshallow 2207efd109f47fe21fcccbf79bc93a2841d7d477: 2c4392f363891f11cc6f18eda564735ee9095dea:
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin 2207efd109f47fe21fcccbf79bc93a2841d7d477: 2c4392f363891f11cc6f18eda564735ee9095dea:
+DEBUG: ran git fetch origin 2207efd109f47fe21fcccbf79bc93a2841d7d477: 2c4392f363891f11cc6f18eda564735ee9095dea: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git rev-parse --is-shallow-repository
+DEBUG: Unshallowed git repo in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard 2c4392f363891f11cc6f18eda564735ee9095dea
+DEBUG: ran git reset --hard 2c4392f363891f11cc6f18eda564735ee9095dea in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge 2207efd109f47fe21fcccbf79bc93a2841d7d477
+DEBUG: ran git merge 2207efd109f47fe21fcccbf79bc93a2841d7d477 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 2c4392f363891f11cc6f18eda564735ee9095dea..HEAD
+Merged SHA 2207efd109f47fe21fcccbf79bc93a2841d7d477 with commit message 'chore: Promote dashboard-ui to version 0.0.1' into base branch master
+
+Showing logs for build [32mmeta-craft-de-jet-environment-p-9nsvd-1[0m stage [32mmeta-pipeline[0m and container [32mstep-create-effective-pipeline[0m
+error: Missing option: --docker-registry
+[31m
+Pipeline failed on stage 'meta-pipeline' : container 'step-create-effective-pipeline'. The execution of the pipeline has stopped.[0m
