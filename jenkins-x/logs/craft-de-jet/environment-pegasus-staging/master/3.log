@@ -1,0 +1,52 @@
+
+Showing logs for build [32mcraft-de-jet-environment-pegasu-q9plc-3[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-t96tf[0m
+{"level":"info","ts":1591200085.2064795,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1591200085.2067976,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcraft-de-jet-environment-pegasu-q9plc-3[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-2tv4m[0m
+{"level":"info","ts":1591200086.0342562,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1591200086.0351043,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcraft-de-jet-environment-pegasu-q9plc-3[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcraft-de-jet-environment-pegasu-q9plc-3[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-craft-de-jet-environment-pegasu-q9plc-w8n9s[0m
+{"level":"info","ts":1591200092.1906884,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1591200094.36489,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/************/environment-pegasus-staging.git @ v0.0.2 in path /workspace/source"}
+
+Showing logs for build [32mcraft-de-jet-environment-pegasu-q9plc-3[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:a03ef093c8410572e74965d87da3898baa4534c8
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcraft-de-jet-environment-pegasu-q9plc-3[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /builder/home/git/credentials
+
+Showing logs for build [32mcraft-de-jet-environment-pegasu-q9plc-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-helm-apply[0m
+Modified file /workspace/source/env/Chart.yaml to set the chart to version 3
+creating the lock configmap jx-lock-***-staging
+lock configmap jx-lock-***-staging created
+Ignoring templates/.gitignore
+Ignoring templates/wildcardcert-secret.yaml
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+cleaning the lock configmap jx-lock-***-staging
+error: upgrading helm chart '.': failed to run 'kubectl apply --recursive -f /tmp/helm-template-workdir-437069738/jx/output/namespaces/***-staging -l jenkins.io/chart-release=jx --namespace ***-staging --wait --validate=false' command in directory '/tmp/jx-helm-apply-476743106/env', output: 'role.rbac.authorization.k8s.io/cleanup configured
+rolebinding.rbac.authorization.k8s.io/cleanup configured
+serviceaccount/cleanup configured
+release.jenkins.io/dashboard-api-springboot-0.0.2 created
+service/dashboard-api-springboot created
+deployment.apps/jx-dashboard-ui configured
+release.jenkins.io/dashboard-ui-0.0.1 configured
+service/dashboard-ui configured
+configmap/exposecontroller configured
+role.rbac.authorization.k8s.io/expose configured
+rolebinding.rbac.authorization.k8s.io/expose configured
+serviceaccount/expose configured
+error: unable to recognize "/tmp/helm-template-workdir-437069738/jx/output/namespaces/***-staging/env/charts/dashboard-api-springboot/templates/part0-deployment.yaml": no matches for kind "Deployment" in version "extensions/v1beta1"'
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-helm-apply'. The execution of the pipeline has stopped.[0m
